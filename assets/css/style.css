@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    background: #bada55;
+    overflow: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+canvas {
+    margin-left: 13vw;
+    width: 85vw;
+    height: 100vh;
+    display: block;
+}
+
+.loading{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-left: 15vw;
+    width: 85vw;
+    z-index: 999;
+}
+
+.loaded{
+    display: none;
+}
+
+.model-navigation{
+    background: rgba(211, 211, 211, 0.5);
+    width: 280px;
+    height: auto;
+    padding: 1rem;
+    position: absolute;
+    z-index: 999;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    left: 0;
+    top: 0;
+}
+
+.model-navigation h4{
+    width: 100%;
+    text-align: center;
+}
+.model-navigation h3, small{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.model-navigation ul{
+    padding: 0;
+    list-style: none;
+}
+
+.model-navigation button{
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    width: 100%;
+    border-radius: 3px;
+    padding: 1rem;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    outline: none;
+}
+
+.model-navigation button:hover{
+    background: yellowgreen;
+    border: 2px solid yellow;
+}
+
+.model-navigation button.selected{
+    background: yellowgreen;
+    border: 2px solid yellow;
+}
+
+.car-collection{
+    height: 350px;
+    overflow-y: auto;
+}
+
+.config{
+    display: flex; 
+    margin-bottom: 5px;
+}
+
+.config span{
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 2px;
+    outline: none;
+}
+
+input:active:hover{
+    border: 1px solid yellowgreen;
+}
+
+.paint-red{
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    height: 10px;
+    background: rgb(255,0,0);
+}
+.paint-green{
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    height: 10px;
+    background: rgb(0, 255, 0);
+}
+.paint-blue{
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    height: 10px;
+    background: rgb(0, 0, 255);
+}
+.paint-yellow{
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    height: 10px;
+    background: rgb(255, 255, 0);
+}
+
+
+.window-dark{
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.window-light{
+    cursor: pointer;
+    padding: 10px;
+    margin: 2px;
+    height: 10px;
+    background: rgba(0, 94, 97, 0.2);
+}
