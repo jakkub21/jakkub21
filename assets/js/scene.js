@@ -91,7 +91,7 @@ function load3Dmodel(name, element){
         document.querySelector(".loading").classList.add('loaded');
     }, function ( xhr ) {
         //console.log(loading);
-        loading.innerText = 'Loading model...'
+        loading.innerText = 'Loading model...' + ( xhr.loaded / xhr.total * 100 ) + '%'
         // ( xhr.loaded / xhr.total * 100 ) + '% loaded';
     }, function ( error ) {
         alert("Sorry, your model can not be loaded properly.")
