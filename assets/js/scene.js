@@ -80,9 +80,9 @@ function load3Dmodel(name, element){
         //console.log(car)
         fitCameraToObject(car);
 
-        car.traverse((o) => {
-            if(o.isMesh) console.log(o.material);
-        });
+        //car.traverse((o) => {
+        //    if(o.isMesh) console.log(o.material);
+        //});
         
         scene.add(car);
         current_model = car;
@@ -102,7 +102,7 @@ function load3Dmodel(name, element){
 function setPaintColor(selected_color){ // 0xff0000 - red
     //console.log(selected_color);
     if( current_model  !== null){
-        console.log(current_model);
+        //console.log(current_model);
         current_model.traverse((o) => {
             if (o.isMesh) {
                 if( o.material.name === "paint" || 
