@@ -3,6 +3,7 @@ let camera, scene, raycaster, renderer;
 
 let INTERSECTED;
 let moving = false;
+var quote_objects = [];
 var lookDirection = new THREE.Vector3();
 
 
@@ -41,12 +42,12 @@ function init() {
 		LEFT: THREE.MOUSE.RIGHT, 
 		MIDDLE: THREE.MOUSE.MIDDLE, 
 		RIGHT: THREE.MOUSE.LEFT
-	}
+    }
 	controls.enableDamping = true;
 	controls.dampingFactor = 0.14;
 	controls.screenSpacePanning = false;
-	controls.panSpeed = 10;
-	controls.rotateSpeed = 5;
+	controls.panSpeed = 5;
+	controls.rotateSpeed = 3;
 	controls.minPolarAngle = 30 / 180 * Math.PI;
 	controls.maxPolarAngle = 88 / 180 * Math.PI;
     
@@ -55,8 +56,12 @@ function init() {
     document.addEventListener( 'mousemove', onmousemove );
     window.addEventListener( 'resize', onWindowResize );
 
+    document.querySelector('.quote').addEventListener('mousemove', function(ev) {
+        ev.stopPropagation();
+    });
+
+
     animate();
-    console.log(quotes);
 }
 
 function onWindowResize() {
@@ -66,6 +71,13 @@ function onWindowResize() {
 
     renderer.setSize( window.innerWidth, window.innerHeight );
 
+}
+
+function searchBox(){
+    const box_number = document.getElementById('box-number').value;
+    if( box_number > 0 ){
+        moveToObject(quote_objects[box_number-1]);
+    }
 }
 
 function onmousemove( event ) {
@@ -132,6 +144,8 @@ function renderCubes(count){
         // populate userData with an object ID
         object.userData.id = i+1;
 
+
+        quote_objects.push(object);
         scene.add( object );
 
     }
@@ -156,9 +170,6 @@ function getRandomQuote(){
 
 
 function moveToObject(obj){
-    // TODO: Fetch custom inspiration quote for box
-    // TODO: Display Quote Message on tween complete
-    // TODO: Mark object as already readed
     controls.enabled = false;
     moving = true;
     
@@ -186,8 +197,12 @@ async function onMoveFinish(obj, fetch){
             const random_quote = getRandomQuote()
             const quote_block = document.querySelector('.quote'); 
             let html = "<h3>Quote Box: "+ obj.userData.id +"</h3>";
-            html += "\"" +random_quote.text + "\" - " + random_quote.author+"";
+            html += "\"" +random_quote.text + "\" - " + random_quote.author+" <br/>";
+            html += '<span class="search-area"><input type="number" id="box-number" placeholder="Enter value between 1 - 40"/> <button type="button" onclick="searchBox()">Search</button></span>';
             quote_block.innerHTML = html;
+
+            // Set Quote Block background color
+            // document.querySelector('.quote').style.background = "#"+obj.material.color.getHexString(); 
         }
     }
 

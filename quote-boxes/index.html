@@ -6,7 +6,7 @@
     <title>Vyhľadávanie v 3D Priestore</title>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     
     <!-- JS scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,13 +19,16 @@
             init(); // function comes from scripts.js
         }
     </script>
-    <script src="assets/js/script2.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div class="quote">
         <h3>Interactive quote boxes</h3>
-        <span>Move mouse over quote box to see inspiration message.</span>
+        <span>Move mouse over quote box to see inspiration message or type Quote Box number in search bar (1-40).</span> <br/>
+        <span class="search-area">
+            <input type="number" value="" id="box-number" placeholder="Enter value between 1 - 40"/> 
+            <button type="button" onclick="searchBox()">Search</button>
+        </span>
     </div>
-    <!-- Application will be generated here  -->
 </body>
 </html>

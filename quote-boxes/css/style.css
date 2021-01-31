@@ -17,7 +17,7 @@ canvas {
     margin-right: auto;
     width: 80%;
     padding: 1rem;
-    z-index: 100000;
+    z-index: 100000000000000;
     color: black;
     background: rgba(190, 255, 92, 0.59);
     text-align: center;
@@ -26,4 +26,34 @@ canvas {
 .quote h3{
     margin: 0;
     padding: 0;
+}
+
+.search-area{
+    margin-top: 1rem;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.7;
+}
+
+.search-area input{
+    width: 300px;
+    border: 1px solid lightblue;
+    padding: 0.4rem;
+}
+
+.search-area button{
+    background: rgb(49, 49, 49);
+    color: white;
+    border: none;
+    padding: 0.4rem;
+}
+
+.remove{
+    background: red;
+    color: black;
+}
+
+.search-area button:hover{
+    background: black;
 }
