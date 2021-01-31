@@ -30,7 +30,7 @@ function init() {
 
     geometry = new THREE.BoxGeometry( 10, 10, 10 );
 
-    renderCubes(40);
+    renderCubes(100);
 
     renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setPixelRatio( window.devicePixelRatio );
@@ -198,7 +198,7 @@ async function onMoveFinish(obj, fetch){
             const quote_block = document.querySelector('.quote'); 
             let html = "<h3>Quote Box: "+ obj.userData.id +"</h3>";
             html += "\"" +random_quote.text + "\" - " + random_quote.author+" <br/>";
-            html += '<span class="search-area"><input type="number" id="box-number" placeholder="Enter value between 1 - 40"/> <button type="button" onclick="searchBox()">Search</button></span>';
+            html += '<span class="search-area"><input type="number" id="box-number" placeholder="Enter value between 1 - 100"/> <button type="button" onclick="searchBox()">Search</button></span>';
             quote_block.innerHTML = html;
 
             // Set Quote Block background color
